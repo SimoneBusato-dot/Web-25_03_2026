@@ -1,9 +1,10 @@
 <script>
-    let count =$state(0)
+let { initialCount: count = $bindable()} = $props()
+
   let double = $derived(count * 2);
 </script>
 
-<button onclick={() => count++}>
+<button onclick={() => count+=5}>
     clicks: {count}
 </button>
 <span> doubled is {double}</span>
